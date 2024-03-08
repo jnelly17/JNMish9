@@ -2,10 +2,12 @@ import React from 'react';
 import './App.css';
 import data from './CollegeBasketballTeams.json';
 
+//header function
 function Header() {
   return <h1>March Madness Teams</h1>;
 }
 
+//interface setup
 interface TeamProps {
   school: string;
   name: string;
@@ -13,8 +15,10 @@ interface TeamProps {
   state: string;
 }
 
+//initialize data
 const teamNames = data.teams;
 
+//Component to format each card and assign properties
 class Team extends React.Component<TeamProps> {
   render() {
     const oneTeam = this.props;
@@ -31,6 +35,7 @@ class Team extends React.Component<TeamProps> {
   }
 }
 
+//display function uses mapping to display all data
 function TeamList() {
   return (
     <div className="team-list">
@@ -41,6 +46,7 @@ function TeamList() {
   );
 }
 
+//main app function
 function App() {
   return (
     <div className="App">
